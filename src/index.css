@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,83 +6,83 @@
 
 @layer base {
   :root {
-    --background: 48 30% 97%;
-    --foreground: 173 69% 16%;
+    --background: 200 80% 97%;
+    --foreground: 200 80% 16%;
 
-    --card: 48 30% 97%;
-    --card-foreground: 173 69% 16%;
+    --card: 200 80% 97%;
+    --card-foreground: 200 80% 16%;
 
-    --popover: 48 30% 97%;
-    --popover-foreground: 173 69% 16%;
+    --popover: 200 80% 97%;
+    --popover-foreground: 200 80% 16%;
 
-    --primary: 173 57% 39%;
-    --primary-foreground: 48 30% 97%;
+    --primary: 250 60% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 39 78% 66%;
-    --secondary-foreground: 173 69% 16%;
+    --secondary: 180 60% 80%;
+    --secondary-foreground: 200 80% 16%;
 
-    --muted: 173 10% 85%;
-    --muted-foreground: 173 30% 30%;
+    --muted: 180 40% 85%;
+    --muted-foreground: 200 40% 40%;
 
-    --accent: 14 76% 61%;
-    --accent-foreground: 48 30% 97%;
+    --accent: 300 60% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 48 30% 97%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 173 20% 80%;
-    --input: 173 20% 80%;
-    --ring: 173 57% 39%;
+    --border: 180 40% 80%;
+    --input: 180 40% 80%;
+    --ring: 250 60% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 173 57% 39%;
-    --sidebar-foreground: 48 30% 97%;
-    --sidebar-primary: 196 70% 43%;
-    --sidebar-primary-foreground: 48 30% 97%;
-    --sidebar-accent: 14 76% 61%;
-    --sidebar-accent-foreground: 48 30% 97%;
-    --sidebar-border: 173 70% 25%;
-    --sidebar-ring: 173 70% 25%;
+    --sidebar-background: 250 60% 50%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 300 60% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 250 40% 40%;
+    --sidebar-ring: 250 40% 40%;
   }
 
   .dark {
-    --background: 173 69% 16%;
-    --foreground: 48 30% 97%;
+    --background: 220 40% 12%;
+    --foreground: 220 40% 97%;
 
-    --card: 173 60% 20%;
-    --card-foreground: 48 30% 97%;
+    --card: 220 40% 16%;
+    --card-foreground: 220 40% 97%;
 
-    --popover: 173 60% 20%;
-    --popover-foreground: 48 30% 97%;
+    --popover: 220 40% 16%;
+    --popover-foreground: 220 40% 97%;
 
-    --primary: 173 57% 39%;
-    --primary-foreground: 48 30% 97%;
+    --primary: 250 60% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 39 78% 66%;
-    --secondary-foreground: 173 69% 16%;
+    --secondary: 220 30% 25%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 173 40% 25%;
-    --muted-foreground: 173 20% 70%;
+    --muted: 220 30% 25%;
+    --muted-foreground: 220 30% 70%;
 
-    --accent: 14 76% 61%;
-    --accent-foreground: 48 30% 97%;
+    --accent: 300 60% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 48 30% 97%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 173 50% 30%;
-    --input: 173 50% 30%;
-    --ring: 173 57% 39%;
+    --border: 220 30% 30%;
+    --input: 220 30% 30%;
+    --ring: 250 60% 50%;
 
-    --sidebar-background: 173 69% 16%;
-    --sidebar-foreground: 48 30% 97%;
-    --sidebar-primary: 196 70% 43%;
-    --sidebar-primary-foreground: 48 30% 97%;
-    --sidebar-accent: 14 76% 61%;
-    --sidebar-accent-foreground: 48 30% 97%;
-    --sidebar-border: 173 50% 30%;
-    --sidebar-ring: 173 50% 30%;
+    --sidebar-background: 250 60% 30%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 300 60% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 250 40% 25%;
+    --sidebar-ring: 250 40% 25%;
   }
 }
 
@@ -103,10 +102,10 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-medteal to-medblue bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
   
   .feature-icon {
-    @apply mb-4 rounded-full bg-medteal/20 p-3 text-medteal;
+    @apply mb-4 rounded-full bg-accent/20 p-3 text-accent;
   }
 }
