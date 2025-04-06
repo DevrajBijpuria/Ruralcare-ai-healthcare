@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { AlertCircle, Check, Camera, CameraOff } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
+import { toast } from "sonner";
 
 const PostureMonitor = () => {
   const [isCameraActive, setIsCameraActive] = useState(false);
@@ -14,13 +14,14 @@ const PostureMonitor = () => {
   const [goodPostureTime, setGoodPostureTime] = useState(0);
   const [consecutiveBadPostureTime, setConsecutiveBadPostureTime] = useState(0);
   const [alertShown, setAlertShown] = useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const streamRef = useRef<MediaStream | null>(null);
 
   useEffect(() => {
-    let interval: number | undefined;
+    let interval: NodeJS.Timeout | undefined;
     
     if (isCameraActive) {
-      interval = window.setInterval(() => {
+      interval = setInterval(() => {
         setSessionDuration(prev => prev + 1);
         
         // Simulate posture detection (random for demo)
@@ -47,32 +48,56 @@ const PostureMonitor = () => {
   }, [isCameraActive, consecutiveBadPostureTime, alertShown]);
 
   const handleCameraToggle = async () => {
-    if (isCameraActive) {
+    if (isCameraActive && streamRef.current) {
       // Stop camera
-      if (videoRef.current && videoRef.current.srcObject) {
-        const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
-        tracks.forEach(track => track.stop());
+      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+      if (videoRef.current) {
         videoRef.current.srcObject = null;
       }
       setIsCameraActive(false);
+      toast.info("Camera stopped");
       return;
     }
     
     try {
-      // Start camera
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      // Start camera with explicit constraints
+      const constraints = {
+        video: {
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+          facingMode: "user"
+        },
+        audio: false
+      };
+      
+      console.log("Requesting camera access...");
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      console.log("Camera access granted:", stream);
+      
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
+        streamRef.current = stream;
+        
+        // Ensure video plays when it's ready
+        videoRef.current.onloadedmetadata = () => {
+          if (videoRef.current) {
+            videoRef.current.play().catch(e => console.error("Error playing video:", e));
+          }
+        };
       }
+      
       setHasPermission(true);
       setIsCameraActive(true);
       setAlertShown(false);
       setSessionDuration(0);
       setGoodPostureTime(0);
       setConsecutiveBadPostureTime(0);
+      toast.success("Camera activated successfully");
     } catch (error) {
       console.error("Error accessing camera:", error);
       setHasPermission(false);
+      toast.error("Failed to access camera. Please check your permissions.");
     }
   };
 
