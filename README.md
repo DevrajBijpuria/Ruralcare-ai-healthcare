@@ -24,24 +24,17 @@ ruralcare-ai-healthcare/
 │
 ├── README.md
 ├── .gitignore
-│
 ├── docs/               
-│
 ├── triage-bot/         
 │   └── symptom_checker.py
-│
 ├── emotion-detector/   
 │   └── emotion_model.py
-│
 ├── posture-ai/         
 │   └── posture_camera.py
-│
 ├── asha-training/     
 │   └── content/
-│
 ├── app/                
 │   └── index.html
-│
 ├── datasets/           
 └── requirements.txt
 
