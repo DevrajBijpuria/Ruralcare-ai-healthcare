@@ -19,8 +19,6 @@
 - Firebase/Supabase for backend
 - PWA for mobile interface
 
-## 📁 Structure
-ruralcare-ai-healthcare/,Docs/,triage-bot/,emotion-detector/,posture-ai/,asha-training/,app/,datasets/
 
 
 ## Contributors
