@@ -20,23 +20,8 @@
 - PWA for mobile interface
 
 ## 📁 Structure
-ruralcare-ai-healthcare/
-│
-├── README.md
-├── .gitignore
-├── docs/               
-├── triage-bot/         
-│   └── symptom_checker.py
-├── emotion-detector/   
-│   └── emotion_model.py
-├── posture-ai/         
-│   └── posture_camera.py
-├── asha-training/     
-│   └── content/
-├── app/                
-│   └── index.html
-├── datasets/           
-└── requirements.txt
+ruralcare-ai-healthcare/,Docs/,triage-bot/,emotion-detector/,posture-ai/,asha-training/,app/,datasets/
+
 
 ## Contributors
 - DEVRAJ BIJPURIA
