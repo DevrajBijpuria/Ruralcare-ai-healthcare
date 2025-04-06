@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+*.env
+
+# IDE configs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data or model files (optional)
+*.h5
+*.pt
+*.pkl
+*.pickle
+*.csv
+*.json
+
+# Node modules (if using JS frontend)
+node_modules/
+
+# Output folders
+/build/
+/dist/
+/__pycache__/
