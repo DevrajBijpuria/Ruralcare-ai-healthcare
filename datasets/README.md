@@ -1,0 +1,5 @@
+- Triage model: [SymCAT](https://www.symcat.com)
+- Emotion detection: FER-2013 dataset
+- Posture: MediaPipe keypoints
+- Voice: RAVDESS
+- Custom synthetic Q&A for ASHA modules
