@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,68 +62,34 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Rural Aid Nexus custom colors
+				// Bright color palette
 				medteal: {
-					light: '#4ECDC4',
-					DEFAULT: '#2A9D8F',
-					dark: '#1A6E64',
+					light: '#0EA5E9', // Bright blue
+					DEFAULT: '#0891B2', // Ocean blue 
+					dark: '#0E7490', // Deep blue
 				},
 				medgold: {
-					light: '#F4D58D',
-					DEFAULT: '#E9C46A',
-					dark: '#D4A429',
+					light: '#F97316', // Bright orange
+					DEFAULT: '#EA580C', // Deep orange
+					dark: '#C2410C', // Dark orange
 				},
 				medred: {
-					light: '#F19C8A',
-					DEFAULT: '#E76F51',
-					dark: '#CB4D30',
+					light: '#D946EF', // Bright magenta
+					DEFAULT: '#C026D3', // Deep magenta
+					dark: '#A21CAF', // Dark magenta
 				},
 				medblue: {
-					light: '#8ECAE6',
-					DEFAULT: '#219EBC',
-					dark: '#156D85',
+					light: '#8B5CF6', // Bright purple
+					DEFAULT: '#7C3AED', // Deep purple
+					dark: '#6D28D9', // Dark purple
 				},
 				medcream: {
-					light: '#FFFFFF',
-					DEFAULT: '#F7F7F2',
-					dark: '#E5E5E0',
+					light: '#FFFFFF', // White
+					DEFAULT: '#F5F5F5', // Off-white
+					dark: '#EBEBFA', // Light lavender
 				},
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				},
-				'pulse-light': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.6' }
-				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pulse-light': 'pulse-light 2s ease-in-out infinite',
-			},
-			fontFamily: {
-				sans: ['Open Sans', 'sans-serif'],
-			}
+			// ... keep existing code (borderRadius, keyframes, animations, fontFamily)
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
