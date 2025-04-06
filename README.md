@@ -20,7 +20,30 @@
 - PWA for mobile interface
 
 ## 📁 Structure
-See folders like `triage-bot/`, `emotion-detector/`, `asha-training/` etc.![Image](https://github.com/user-attachments/assets/446474b9-ab02-4c39-b617-32d542610959)
+ruralcare-ai-healthcare/
+│
+├── README.md
+├── .gitignore
+│
+├── docs/               
+│
+├── triage-bot/         
+│   └── symptom_checker.py
+│
+├── emotion-detector/   
+│   └── emotion_model.py
+│
+├── posture-ai/         
+│   └── posture_camera.py
+│
+├── asha-training/     
+│   └── content/
+│
+├── app/                
+│   └── index.html
+│
+├── datasets/           
+└── requirements.txt
 
 ## Contributors
 - DEVRAJ BIJPURIA
